@@ -11,10 +11,10 @@ import java.util.logging.Logger;
 public class BeverageSender {
     private static final Logger logger = Logger.getLogger(QueueSender.class.getName());
 
-    @Resource(mappedName = "TestCFAssignment")
+    @Resource(mappedName = "BeverageStoreCF")
     private ConnectionFactory factory;
 
-    @Resource(mappedName = "testQueueAssignment")
+    @Resource(mappedName = "BeverageStoreQueue")
     private Queue target;
 
     public void sendMessage(Beverage beverage) {
