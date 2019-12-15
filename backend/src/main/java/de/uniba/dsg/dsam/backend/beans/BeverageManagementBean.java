@@ -12,4 +12,5 @@ public class BeverageManagementBean implements BeverageManagement {
     public void create(Beverage beverage) {
 
     }
+
 }
