@@ -21,30 +21,7 @@ public class BeveragesServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		String manufacturer = req.getParameter("div_manufacturer").trim();
-		String name = req.getParameter("div_name").trim();
-		int quantity = Integer.parseInt(req.getParameter("div_quantity").trim());
-		double price = Double.valueOf(req.getParameter("div_price").trim());
 
-//		String incentive = req.getParameter("incentive").trim();
-
-		PrintWriter out = res.getWriter();
-		out.println(name);
-
-		Beverage beverage;
- 		beverage = new Beverage(manufacturer,name,quantity,price);
-
-//		if (incentive.equals("promotionalgift")){
-//			PromotionalGift promotionalGift = new PromotionalGift("promotionalgift");
-//			Incentive incentiveObj = new Incentive(promotionalGift.getPromotionalGift());
-//			beverage = new Beverage(manufacturer,name,quantity,price,incentiveObj);
-//		}else {
-//			TrialPackage trialPackage = new TrialPackage("trialpackage");
-//			Incentive incentiveObj = new Incentive(trialPackage.getTrialPackage());
-//			beverage = new Beverage(manufacturer, name, quantity, price, incentiveObj);
-//		}
-
-		beverageSender.sendMessage(beverage);
 	}
 
 	@Override
@@ -59,8 +36,7 @@ public class BeveragesServlet extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		out.println(name);
 
-		Beverage beverage;
-		beverage = new Beverage(manufacturer,name,quantity,price);
+		Beverage beverage = new Beverage(manufacturer,name,quantity,price);
 
 //		if (incentive.equals("promotionalgift")){
 //			PromotionalGift promotionalGift = new PromotionalGift("promotionalgift");

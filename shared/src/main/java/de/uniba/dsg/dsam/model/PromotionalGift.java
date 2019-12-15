@@ -1,6 +1,8 @@
 package de.uniba.dsg.dsam.model;
 
-public class PromotionalGift extends Incentive {
+import java.io.Serializable;
+
+public class PromotionalGift extends Incentive implements Serializable {
     final String PromotionalGift ="promotionalgift";
 
     public PromotionalGift(String name) {

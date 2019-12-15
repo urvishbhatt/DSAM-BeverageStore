@@ -1,6 +1,8 @@
 package de.uniba.dsg.dsam.model;
 
-public class Incentive {
+import java.io.Serializable;
+
+public class Incentive implements Serializable {
     private String name;
 
 
