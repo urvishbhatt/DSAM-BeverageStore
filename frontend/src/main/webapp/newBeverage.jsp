@@ -17,7 +17,6 @@
 <body>
 	<div class="container">
 		<h1>Beverage Store</h1>
-<<<<<<< HEAD
 
 		<form role="form" action="frontend/newBeverage" method="post">
         			<div class="form-group">
@@ -45,11 +44,9 @@
                                 			<input name="div_price" type="text" class="form-control">
                                 	</div>
                      </div>
-        			<a href="/newBeverag" class="btn btn-default">Cancel</a>
+        			<a href="/newBeverage" class="btn btn-default">Cancel</a>
         			<button type="submit" class="btn btn-success">Save</button>
         		</form>
-=======
->>>>>>> 2a32726f083ccdb65e2ed1aa2b81309abcb5cd2f
 		
 		<p><a href="/new" class="btn btn-primary">Create new beverage</a></p>
 	</div>

@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+		 version="3.0">
+=======
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
+>>>>>>> 2a32726f083ccdb65e2ed1aa2b81309abcb5cd2f
 
 	<display-name>BeverageStoreUI</display-name>
 
 	<!-- Servlets -->
 
 	<!-- JSPs -->
+<<<<<<< HEAD
+	<!--	<servlet>-->
+	<!--		<servlet-name>Main</servlet-name>-->
+	<!--		<jsp-file>main.jsp</jsp-file>-->
+	<!--	</servlet>-->
+	<!--	<servlet-mapping>-->
+	<!--		<servlet-name>Main</servlet-name>-->
+	<!--		<url-pattern>/</url-pattern>-->
+	<!--	</servlet-mapping>-->
+=======
 <!--	<servlet>-->
 <!--		<servlet-name>Main</servlet-name>-->
 <!--		<jsp-file>main.jsp</jsp-file>-->
@@ -16,6 +31,7 @@
 <!--		<servlet-name>Main</servlet-name>-->
 <!--		<url-pattern>/</url-pattern>-->
 <!--	</servlet-mapping>-->
+>>>>>>> 2a32726f083ccdb65e2ed1aa2b81309abcb5cd2f
 
 	<servlet>
 		<servlet-name>Main</servlet-name>
