@@ -1,14 +1,15 @@
 package de.uniba.dsg.dsam.backend.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class BeverageEntity {
+public class BeverageEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue(strategy= GenerationType.SEQUENCE)
-//    @Column(name = "id")
-//    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+
+    private int id;
 
     public BeverageEntity() { }
 
@@ -25,9 +26,9 @@ public class BeverageEntity {
     }
 
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
@@ -45,9 +46,9 @@ public class BeverageEntity {
         this.price = price;
     }
 
-//    public int getId() {
-//        return id;
-//    }
+    public int getId() {
+        return id;
+    }
 
     public String getManufacturer() {
         return manufacturer;

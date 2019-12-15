@@ -1,6 +1,8 @@
 package de.uniba.dsg.dsam.model;
 
-public class TrialPackage extends Incentive {
+import java.io.Serializable;
+
+public class TrialPackage extends Incentive implements Serializable {
     final String TrialPackage ="trialpackage";
 
     public TrialPackage(String name) {
