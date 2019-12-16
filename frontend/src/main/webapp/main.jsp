@@ -1,4 +1,5 @@
 <%@ page import="java.util.*" %>
+<%@ page import="de.uniba.dsg.dsam.model.*" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Beverage Store Demo</title>
+	<title>Bamberg Beverage</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -14,41 +15,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="container">
-	<h1>Beverage Store</h1>
 
-	<form role="form" action="frontend/newBeverage" method="post">
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon">Manufacturer</span>
-				<input name="div_manufacturer" type="text" class="form-control">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon">Name</span>
-				<input name="div_name" type="text" class="form-control">
-			</div>
-		</div>
+<body style="background-color: #6D7B8A">
 
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon">Quantity</span>
-				<input name="div_quantity" type="text" class="form-control">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon">Price</span>
-				<input name="div_price" type="text" class="form-control">
-			</div>
-		</div>
-		<a href="/newBeverag" class="btn btn-default">Cancel</a>
-		<button type="submit" class="btn btn-success">Save</button>
-	</form>
+<form role="form" action="BeveragesServlet" method="GET">
 
-	<p><a href="/new" class="btn btn-primary">Create new beverage</a></p>
-</div>
+	<div class="container">
+
+		<h1 style="color: white">Welcome to Bamberg Beverage Store</h1>
+		<div class="row row-content">
+			<div class="col-sm-2">
+
+				<p><a  href="/frontend/beverageCreation" class="btn btn-primary">Create Beverages</a></p>
+
+			</div>
+		</div>
+	</div>
+
+</form>
+
 </body>
 </html>

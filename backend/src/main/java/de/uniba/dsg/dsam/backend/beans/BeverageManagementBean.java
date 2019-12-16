@@ -17,7 +17,7 @@ public class BeverageManagementBean implements BeverageManagement {
 
     @Override
     public void create(Beverage beverage) {
-        BeverageEntity beverageEntity = new BeverageEntity(beverage.getManufacturer(), beverage.getName(), beverage.getQuantity(),beverage.getPrice());
+        BeverageEntity beverageEntity = new BeverageEntity(beverage.getManufacturer(), beverage.getName(), beverage.getQuantity(),beverage.getPrice(),beverage.getIncentive());
         entityManager.persist(beverageEntity);
     }
 }

@@ -41,12 +41,12 @@
         </div>
     </div>
 
-<%--    <div class ="form-group">--%>
-<%--        <div class="input-group">--%>
-<%--            <input type="radio" name="incentive" value="promotionalgift"> promotion<br>--%>
-<%--            <input type="radio" name="incentive" value="trialpackage"> trial<br>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <div class ="form-group">
+        <div class="input-group">
+            <input type="radio" name="incentive" value="promotionalgift"> promotion<br>
+            <input type="radio" name="incentive" value="trialpackage"> trial<br>
+        </div>
+    </div>
 
     <input type="submit">
 </form>

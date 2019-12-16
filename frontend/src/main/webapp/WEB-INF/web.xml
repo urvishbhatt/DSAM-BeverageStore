@@ -7,23 +7,23 @@
 
 	<!-- Servlets -->
 
-	<!-- JSPs -->
-	<!--	<servlet>-->
-	<!--		<servlet-name>Main</servlet-name>-->
-	<!--		<jsp-file>main.jsp</jsp-file>-->
-	<!--	</servlet>-->
-	<!--	<servlet-mapping>-->
-	<!--		<servlet-name>Main</servlet-name>-->
-	<!--		<url-pattern>/</url-pattern>-->
-	<!--	</servlet-mapping>-->
 
 	<servlet>
 		<servlet-name>Main</servlet-name>
-		<servlet-class>de.uniba.dsg.dsam.client.BeveragesServlet</servlet-class>
+		<jsp-file>main.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Main</servlet-name>
-		<url-pattern>/add</url-pattern>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>beverageCreation</servlet-name>
+		<jsp-file>index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>beverageCreation</servlet-name>
+		<url-pattern>/beverageCreation</url-pattern>
 	</servlet-mapping>
 
 </web-app>

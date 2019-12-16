@@ -7,23 +7,14 @@ public class Beverage implements Serializable {
     private String name;
     private int quantity;
     private double price;
+    private String incentive;
 
-//    private Incentive incentive;
-
-//    public Beverage(String manufacturer, String name, int quantity, double price, Incentive incentive) {
-//        this.manufacturer = manufacturer;
-//        this.name = name;
-//        this.quantity = quantity;
-//        this.price = price;
-//        this.incentive = incentive;
-//    }
-
-
-    public Beverage(String manufacturer, String name, int quantity, double price) {
+    public Beverage(String manufacturer, String name, int quantity, double price, String incentive) {
         this.manufacturer = manufacturer;
         this.name = name;
-        this.quantity = quantity;
+        this.quantity =  quantity;
         this.price = price;
+        this. incentive = incentive;
     }
 
     public String getManufacturer() {
@@ -58,11 +49,11 @@ public class Beverage implements Serializable {
         this.price = price;
     }
 
-//    public Incentive getIncentive() {
-//        return incentive;
-//    }
-//
-//    public void setIncentive(Incentive incentive) {
-//        this.incentive = incentive;
-//    }
+    public String getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(String incentive) {
+        this.incentive = incentive;
+    }
 }
