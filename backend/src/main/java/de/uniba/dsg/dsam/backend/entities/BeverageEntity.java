@@ -1,9 +1,10 @@
 package de.uniba.dsg.dsam.backend.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class BeverageEntity {
+public class BeverageEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
