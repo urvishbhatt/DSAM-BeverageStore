@@ -5,4 +5,5 @@ import de.uniba.dsg.dsam.model.Incentive;
 
 public interface IncentiveManagement {
     public void create(Incentive incentive);
+
 }

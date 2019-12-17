@@ -35,6 +35,12 @@
 				<p><a  href="/frontend/incentiveCreation" class="btn btn-primary">Incentive Creation</a></p>
 
 			</div>
+
+			<div class="col-sm-2">
+
+				<p><a  href="/frontend/orderCreation" class="btn btn-primary">Order Creation</a></p>
+
+			</div>
 		</div>
 	</div>
 

@@ -9,6 +9,9 @@ import de.uniba.dsg.dsam.backend.entities.BeverageEntity;
 import de.uniba.dsg.dsam.model.Beverage;
 import de.uniba.dsg.dsam.persistence.BeverageManagement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Stateless
 public class BeverageManagementBean implements BeverageManagement {
 
@@ -19,5 +22,18 @@ public class BeverageManagementBean implements BeverageManagement {
     public void create(Beverage beverage) {
         BeverageEntity beverageEntity = new BeverageEntity(beverage.getManufacturer(), beverage.getName(), beverage.getQuantity(),beverage.getPrice(),beverage.getIncentive());
         entityManager.persist(beverageEntity);
+    }
+
+    @Override
+    public List<Beverage> getBeverages() {
+        List<Beverage> listBeverage = entityManager.createNamedQuery("queryBeverages").getResultList();
+
+
+        if(listBeverage == null) {
+            return new ArrayList<Beverage>();
+        }
+        else {
+            return listBeverage;
+        }
     }
 }

@@ -7,7 +7,6 @@ public class OrderMessageDrivenBean implements MessageListener {
 
     public OrderMessageDrivenBean() {}
 
-    public void onMessage(Message message) {
+    public void onMessage(Message message) { }
 
-    }
 }

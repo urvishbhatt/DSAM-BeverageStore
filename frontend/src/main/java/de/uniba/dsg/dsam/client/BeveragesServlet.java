@@ -4,9 +4,12 @@ import de.uniba.dsg.dsam.model.Beverage;
 import de.uniba.dsg.dsam.model.Incentive;
 import de.uniba.dsg.dsam.model.PromotionalGift;
 import de.uniba.dsg.dsam.model.TrialPackage;
+import de.uniba.dsg.dsam.persistence.BeverageManagement;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -21,9 +24,17 @@ public class BeveragesServlet extends HttpServlet {
 	@EJB
 	BeverageSender beverageSender;
 
+	@EJB
+	BeverageManagement beverageManagement;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		List<Beverage> List = beverageManagement.getBeverages();
 
+		if(!List.isEmpty()){
+				Logger logger = Logger.getLogger(BeveragesServlet.class.getName());
+				logger.severe("MyServerLog" + List.get(0).getName());
+		}
 	}
 
 	@Override
