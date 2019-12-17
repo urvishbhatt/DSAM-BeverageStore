@@ -7,7 +7,7 @@
 
 	<!-- Servlets -->
 
-
+	<!-- JSPs -->
 	<servlet>
 		<servlet-name>Main</servlet-name>
 		<jsp-file>main.jsp</jsp-file>
@@ -17,23 +17,60 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!-- JSPs -->
 	<servlet>
-		<servlet-name>beverageCreation</servlet-name>
-		<jsp-file>index.jsp</jsp-file>
+		<servlet-name>createBeverage</servlet-name>
+		<jsp-file>createBeverage.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>beverageCreation</servlet-name>
-		<url-pattern>/beverageCreation</url-pattern>
+		<servlet-name>createBeverage</servlet-name>
+		<url-pattern>/createBeverage</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>incentiveCreation</servlet-name>
-		<jsp-file>incentiveCreation.jsp</jsp-file>
+		<servlet-name>beverageManager</servlet-name>
+		<jsp-file>manageBeverage.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>incentiveCreation</servlet-name>
-		<url-pattern>/incentiveCreation</url-pattern>
+		<servlet-name>beverageManager</servlet-name>
+		<url-pattern>/beverageManager</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Edit</servlet-name>
+		<servlet-class>de.uniba.dsg.dsam.client.EditBeverageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/frontend/editBeverage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Assign</servlet-name>
+		<servlet-class>de.uniba.dsg.dsam.client.AssignIncentiveServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Assign</servlet-name>
+		<url-pattern>/frontend/AssignIncentive</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>createIncentive</servlet-name>
+		<jsp-file>createIncentive.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createIncentive</servlet-name>
+		<url-pattern>/createIncentive</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>viewOrder</servlet-name>
+		<jsp-file>viewOrder.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewOrder</servlet-name>
+		<url-pattern>/viewOrder</url-pattern>
+	</servlet-mapping>
 
 </web-app>

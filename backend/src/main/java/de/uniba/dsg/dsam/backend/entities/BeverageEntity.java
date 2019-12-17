@@ -5,73 +5,110 @@ import java.io.Serializable;
 
 @Entity
 public class BeverageEntity implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
-
-    private int id;
-
-    public String manufacturer;
-    public String name;
-    public int quantity;
-    public double price;
-    public String incentive;
-
-    public BeverageEntity() { }
-
-    public BeverageEntity(String manufacturer, String name, int quantity, double price, String incentive) {
-        this.manufacturer = manufacturer;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.incentive = incentive;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getIncentive() {
-        return incentive;
-    }
-
-    public void setIncentive(String incentive) {
-        this.incentive = incentive;
-    }
+		
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	private int id;
+	
+	@Version
+	private int version;
+	private String manufacturer;
+    private String name;
+	private String promotion;
+    private int quantity;
+    private double price;
+            	
+	public BeverageEntity(){
+		
+	}
+	
+	/**
+	 * @param manufacturer
+	 * @param name
+	 * @param promotion
+	 * @param quantity
+	 * @param price
+	 */
+	public BeverageEntity(String manufacturer, String name, String promotion, int quantity, double price) {
+		this();
+		//this.id = id;
+		this.manufacturer = manufacturer;
+		this.name = name;
+		this.promotion = promotion;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * @return the manufacturer
+	 */
+	public String getManufacturer() {
+		return manufacturer;
+	}
+	/**
+	 * @param manufacturer the manufacturer to set
+	 */
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the promotion
+	 */
+	public String getpromotion() {
+		return promotion;
+	}
+	/**
+	 * @param promotion the promotion to set
+	 */
+	public void setpromotion(String promotion) {
+		this.promotion = promotion;
+	}
+	/**
+	 * @return the quantity
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	/**
+	 * @return the price
+	 */
+	public Double getPrice() {
+		return price;
+	}
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(Double price) {
+		this.price = price;
+	}
 }

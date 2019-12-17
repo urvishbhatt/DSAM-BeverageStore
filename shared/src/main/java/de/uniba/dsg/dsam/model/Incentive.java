@@ -2,38 +2,71 @@ package de.uniba.dsg.dsam.model;
 
 import java.io.Serializable;
 
-public class Incentive implements Serializable {
-    private String name;
-    private String description;
-    private String incentive;
+public abstract class Incentive implements Serializable {
+	
+	public int id;
+	public String incentiveType;
+	public String Name;
+	public Incentive(){
+		
+	}
+	
+	/**
+	 * @param id
+	 * @param incentiveType
+	 * @param Name
+	 */
+	
+	public Incentive(int id, String incentiveType) {
+		super();
+		this.id = id;
+		this.incentiveType = incentiveType;
+	}
+	
+	
+	
+	
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
 
-    public Incentive(String name, String description, String incentive) {
-        this.name = name;
-        this.description = description;
-        this.incentive = incentive;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getIncentive() {
-        return incentive;
-    }
-
-    public void setIncentive(String incentive) {
-        this.incentive = incentive;
-    }
+	/**
+	 * @return the incentiveType
+	 */
+	public String getIncentiveType() {
+		return incentiveType;
+	}
+	
+	
+	/**
+	 * @param incentiveType the incentiveType to set
+	 */
+	public void setIncentiveType(String incentiveType) {
+	
+		this.incentiveType = incentiveType;
+	}
+	
+	/**
+	 * @return the Name
+	 */
+	public String getName() {
+		return Name;
+	}
+	/**
+	 * @param Name the Name to set
+	 */
+	public void setName(String Name) {
+		this.Name = Name;
+	}
+	
 }

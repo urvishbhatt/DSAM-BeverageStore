@@ -7,7 +7,17 @@ import java.util.List;
 public interface BeverageManagement {
 
     public void create(Beverage beverage);
-
-    public List<Beverage> getBeverages();
-
+    
+    //beverages CRUD operations
+   	public void create(String manufacturer, String name, String promotion, int quantity, double price);
+	
+   	List<Beverage> getBeverages();
+	public Beverage getBeverages(int bevID);
+	public void update(int id, String manufacturer, String name, String promotion, int quantity, double price);
+	public void delete(int bevID) ;
+	
+	//
+	//assign incentive id in beverages
+		
+		public void update(String id, String promotion);
 }

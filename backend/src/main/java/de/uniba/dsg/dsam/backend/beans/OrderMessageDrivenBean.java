@@ -1,12 +1,41 @@
 package de.uniba.dsg.dsam.backend.beans;
 
-import javax.jms.Message;
-import javax.jms.MessageListener;
+import de.uniba.dsg.dsam.backend.entities.CustomerOrderEntity;
+import de.uniba.dsg.dsam.model.CustomerOrder;
+import de.uniba.dsg.dsam.persistence.OrderMessage;
 
-public class OrderMessageDrivenBean implements MessageListener {
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import java.util.logging.Logger;
 
-    public OrderMessageDrivenBean() {}
+@Stateless
+public class OrderMessageDrivenBean implements OrderMessage {
+	private static final Logger logger = Logger.getLogger(OrderMessage.class.getName());
+	
+	@PersistenceContext(type=PersistenceContextType.TRANSACTION)
+	
+	EntityManager em;
+	
+	  @Override
+	    public void create(CustomerOrder orderss) {
 
-    public void onMessage(Message message) { }
+	    }
+	  @Override
+	  public void create(String name, String manufacturer, int quantity) {
 
+		  logger.info("im inn order bean"+name+"name");
+	
+	CustomerOrderEntity b = new CustomerOrderEntity( name, manufacturer,   quantity);
+	
+	
+	
+	em.persist(b);
+	
+}
+
+
+
+   
 }
