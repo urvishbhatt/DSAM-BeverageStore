@@ -15,5 +15,18 @@
                 <jndi-name>BeverageStoreCF</jndi-name>
             </mdb-connection-factory>
         </ejb>
+
+        <ejb>
+            <ejb-name>IncentiveMDB</ejb-name>
+            <jndi-name>BeverageStoreQueue</jndi-name>
+            <!--
+                This is actually a misuse of the ejb.jndi-name element by SUN!
+                Usually, this element is used for specifying the JNDI name for using the bean.
+                For message-driven beans this element specifies the JMS Destination to use.
+            -->
+            <mdb-connection-factory>
+                <jndi-name>BeverageStoreCF</jndi-name>
+            </mdb-connection-factory>
+        </ejb>
     </enterprise-beans>
 </sun-ejb-jar>

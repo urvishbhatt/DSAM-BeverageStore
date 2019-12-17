@@ -29,6 +29,12 @@
 				<p><a  href="/frontend/beverageCreation" class="btn btn-primary">Create Beverages</a></p>
 
 			</div>
+
+			<div class="col-sm-2">
+
+				<p><a  href="/frontend/incentiveCreation" class="btn btn-primary">Incentive Creation</a></p>
+
+			</div>
 		</div>
 	</div>
 

@@ -26,4 +26,14 @@
 		<url-pattern>/beverageCreation</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>incentiveCreation</servlet-name>
+		<jsp-file>incentiveCreation.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>incentiveCreation</servlet-name>
+		<url-pattern>/incentiveCreation</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
