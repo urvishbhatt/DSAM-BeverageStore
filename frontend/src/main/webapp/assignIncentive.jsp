@@ -34,8 +34,6 @@
 
 	 String x = String.valueOf(request.getAttribute("BeverageId"));
 
-
-
 		List<Incentive> incentives = (List<Incentive>) request.getAttribute("incentiveList");
 		%>
 		<form role="form" action="AssignIncentive" method="post">
