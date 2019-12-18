@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -28,22 +28,22 @@
       <form role="form" action="BeverageServlet" method="post">
         <div class="form-group">
           <label>Beverage Name</label>
-          <input type="text" class="form-control .col-sm-*" name="beverage_name">
+          <input type="text" class="form-control .col-sm-*" name="beverage_name" required>
         </div>
         <div class="form-group">
           <label>Manufacturer Name</label>
-          <input type="text" class="form-control inputsm" name="beverage_manufacturer">
+          <input type="text" class="form-control inputsm" name="beverage_manufacturer" required>
         </div>
         <div class="form-group">
           <input type="hidden" class="form-control inputsm" name="beverage_promotion">
         </div>
         <div class="form-group">
           <label>Quantity</label>
-          <input type="text" class="form-control inputsm" name="beverage_quantity">
+          <input type="number" class="form-control inputsm" name="beverage_quantity" required>
         </div>
         <div class="form-group">
           <label>Price</label>
-          <input type="text" class="form-control inputsm" name="beverage_price">
+          <input type="number" class="form-control inputsm" name="beverage_price" required>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
         <a href="/frontend" class="btn bootstrap-theme">Back</a>

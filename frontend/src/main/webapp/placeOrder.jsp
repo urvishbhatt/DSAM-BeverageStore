@@ -18,13 +18,8 @@
 
 <title>Place Order</title>
 
-
-
 </head>
 <body>
-
-
-
 <div class="container"> 
 <div class="row row-content">
 <h2>Place your order</h2>
@@ -33,7 +28,6 @@
 <form role="form" action="placeOrder" method="post">
 
   <div class="form-group">
-  
     <label>Beverage Name</label>
     <input type="text" class="form-control .col-sm-*" name="beverage_name">
   </div>
