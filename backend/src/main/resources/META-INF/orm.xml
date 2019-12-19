@@ -13,7 +13,7 @@
     </named-query>
 
     <named-query name="queryOrders">
-        <query>Select new de.uniba.dsg.dsam.model.CustomerOrder(c.id,c.manufacturer,c.name,c.quantity) From CustomerOrderEntity c</query>
+        <query>Select new de.uniba.dsg.dsam.model.CustomerOrder(c.id,c.name,c.manufacturer,c.quantity,c.issueDate) From CustomerOrderEntity c</query>
     </named-query>
 
 </entity-mappings>

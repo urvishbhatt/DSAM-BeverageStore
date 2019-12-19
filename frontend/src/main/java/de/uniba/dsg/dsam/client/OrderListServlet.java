@@ -18,16 +18,11 @@ public class OrderListServlet extends HttpServlet {
 	private static final Logger logger = Logger.getLogger(OrderServlet.class.getName());
 
 	@EJB
-    BeverageManagement beverageManagementObject;
-
-	@EJB
     OrderMessage orderMessageObject;
-	
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		
-//		req.setAttribute("beverageList", orderMessageObject.getOrders());
+		req.setAttribute("orderList", orderMessageObject.getOrderList());
 		req.getRequestDispatcher("/viewOrder.jsp").forward(req, res);
 	}
 	

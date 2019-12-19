@@ -17,14 +17,37 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <title>view Order</title>
-
-
-
 </head>
+
 <body>
 
+    <h2>orderslist</h2>
 
-<h2>orderslist</h2>
+    <!-- displaying all beverages to the customer -->
+    <div class="row row-content">
+        <h2>List of Orders</h2>
+        <div class="col-md-3"><h4>Name</h4></div>
+        <div class="col-md-2"><h4>Manufacturer</h4></div>
+
+        <div class="col-md-2"><h4>Quantity</h4></div>
+        <div class="col-md-2"><h4>Date</h4></div>
+    </div>
+
+    <%
+        List<CustomerOrder> customerOrders = (List<CustomerOrder>) request.getAttribute("orderList");
+
+        for(CustomerOrder order: customerOrders) {
+    %>
+    <div class="row">
+
+        <div class="col-md-3"><h4><%= order.getName() %></h4></div>
+        <div class="col-md-2"><h4><%= order.getManufacturer() %></h4></div>
+
+        <div class="col-md-2"><h4><%= order.getQuantity() %></h4></div>
+        <div class="col-md-2"><h4><%= order.getIssueDate()git %></h4></div>
+
+    </div>
+    <% } %>
 
 
 

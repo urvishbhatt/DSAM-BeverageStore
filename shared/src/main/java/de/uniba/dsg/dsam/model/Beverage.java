@@ -12,16 +12,8 @@ public final class Beverage implements Serializable {
     private double price;
 	
 	public Beverage(){}
-	
-	/**
-	 * @param id
-	 * @param manufacturer
-	 * @param name
-	 * @param promotion
-	 * @param quantity
-	 * @param price
-	 */
-	
+
+
 	public Beverage(int id, String manufacturer, String name, String promotion, int quantity, double price) {
 		super();
 		this.id = id;

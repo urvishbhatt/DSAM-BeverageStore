@@ -28,8 +28,7 @@ public class IncentiveServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
-		//int incentiveId = Integer.valueOf(req.getParameter("IncentiveId"));
+
 		String incentiveName = req.getParameter("IncentiveName").trim();
 		String incentiveType = req.getParameter("incentive_type").trim();
 
