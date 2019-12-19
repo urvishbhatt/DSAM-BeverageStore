@@ -44,7 +44,7 @@
         <div class="col-md-2"><h4><%= order.getManufacturer() %></h4></div>
 
         <div class="col-md-2"><h4><%= order.getQuantity() %></h4></div>
-        <div class="col-md-2"><h4><%= order.getIssueDate()git %></h4></div>
+        <div class="col-md-2"><h4><%= order.getIssueDate() %></h4></div>
 
     </div>
     <% } %>
