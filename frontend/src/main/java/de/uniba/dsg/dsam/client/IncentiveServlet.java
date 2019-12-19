@@ -32,13 +32,6 @@ public class IncentiveServlet extends HttpServlet {
 		String incentiveName = req.getParameter("IncentiveName").trim();
 		String incentiveType = req.getParameter("incentive_type").trim();
 
-//		if ("Trial".equals(incentiveType)) {
-//			incentiveManagementObject.create("Trial", incentiveName);
-//		} else if ("Promotional".equals(incentiveType)) {
-//			incentiveManagementObject.create("Promotional", incentiveName);
-//		}
-
-		PrintWriter out = res.getWriter();
 
 		Incentive incentive = new Incentive(incentiveName,incentiveType);
 		if (incentiveType.equals("Trial")){

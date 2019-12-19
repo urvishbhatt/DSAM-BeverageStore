@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
 @WebServlet("/BIFunctionality")
 public class BIServlet extends HttpServlet {
@@ -21,10 +23,19 @@ public class BIServlet extends HttpServlet {
     @EJB
     OrderMessage OrderManagement;
 
+    ArrayList<String> arrayList;
+
+    private static final Logger logger = Logger.getLogger(BIServlet.class.getName());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        arrayList = new ArrayList<>();
         BICalculation biCalculation = new BICalculation(beverageManagement.getBeverages(),OrderManagement.getOrderList());
-        biCalculation.calculateRevenu();
+        arrayList = biCalculation.calculateRevenu();
+        req.setAttribute("total_revenue", arrayList.get(0));
+        req.setAttribute("trial_revenue", arrayList.get(1));
+        req.setAttribute("promotional_revenue", arrayList.get(2));
+        req.setAttribute("non_revenu", arrayList.get(3));
         req.getRequestDispatcher("/BIFunctionality.jsp").forward(req, resp);
     }
 

@@ -28,24 +28,32 @@
     </thead>
     <tbody>
         <tr>
-            <th scope="row">Promotional Incentive</th>
-            <td>2000</td>
+            <th>Promotional Incentive</th>
+            <%
+
+                String total_revenue = (String)request.getAttribute("total_revenue");
+                String trial_revenue = (String) request.getAttribute("trial_revenue");
+                String promotional_revenue = (String)request.getAttribute("promotional_revenue");
+                String non_revenu = (String) request.getAttribute("non_revenu");
+
+            %>
+            <td><%=promotional_revenue%></td>
         </tr>
 
         <tr>
-            <th scope="row">Trial Incentive</th>
-            <td>3000</td>
+            <th>Trial Incentive</th>
+            <td><%=trial_revenue%></td>
         </tr>
 
         <tr>
-            <th scope="row">Non Incentive</th>
-            <td>5000</td>
+            <th>Non Incentive</th>
+            <td><%=non_revenu%></td>
         </tr>
 
     <thead class="thead-dark">
     <tr>
         <th scope="col">Total Revenue</th>
-        <th scope="col">400000</th>
+        <th scope="col"><%=total_revenue%></th>
     </tr>
     </thead>
 
