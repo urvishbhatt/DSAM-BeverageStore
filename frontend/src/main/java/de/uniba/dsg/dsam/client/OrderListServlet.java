@@ -16,8 +16,10 @@ import java.util.logging.Logger;
 @WebServlet("/orderList")
 public class OrderListServlet extends HttpServlet {
 	private static final Logger logger = Logger.getLogger(OrderServlet.class.getName());
+
 	@EJB
     BeverageManagement beverageManagementObject;
+
 	@EJB
     OrderMessage orderMessageObject;
 	
@@ -25,23 +27,16 @@ public class OrderListServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
-		//req.setAttribute("beverageList", orderMgt.getOrders());
+//		req.setAttribute("beverageList", orderMessageObject.getOrders());
 		req.getRequestDispatcher("/viewOrder.jsp").forward(req, res);
-		
-	
-		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-	
-	
-		
 		res.sendRedirect("/frontend");
 	}
 	
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
-
 	}
 }

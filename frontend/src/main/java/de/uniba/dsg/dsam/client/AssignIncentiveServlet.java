@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 @WebServlet("/AssignIncentive")
@@ -19,33 +20,23 @@ public class AssignIncentiveServlet extends HttpServlet {
 	@EJB
     IncentiveManagement incentiveManagementObject;
 
+	@EJB
+	BeverageManagement beverageManagement;
+
+	String BeverageId;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		String BeverageId = req.getParameter("beverage_id");
+		BeverageId = req.getParameter("beverage_id");
 		req.setAttribute("BeverageId", BeverageId);
-		req.setAttribute("incentiveList", incentiveManagementObject.combineIncentives());
+		req.setAttribute("incentiveList", incentiveManagementObject.getAllIncentive());
 		req.getRequestDispatcher("/assignIncentive.jsp").forward(req, res);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
-		String incentiveId = req.getParameter("incentive_id");
 		String incentiveType = req.getParameter("incentive_type");
-		
-		if ("Trial".equals(incentiveType)) {
-
-			
-		}  
-		if ("Promotional".equals(incentiveType)) {
-
-			
-		}
-		if ("None".equals(incentiveType)) {
-
-		}
-
-	res.sendRedirect("/frontend");
+		beverageManagement.update(Integer.parseInt(BeverageId),incentiveType);
+		res.sendRedirect("/frontend");
 	}
 	
 	@Override

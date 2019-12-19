@@ -33,10 +33,9 @@ public class OrderServlet extends HttpServlet {
 	
 		String BeverageName = req.getParameter("beverage_name").trim();
 		String ManufacturerName = req.getParameter("beverage_manufacturer").trim();
-		
 		int quantity = Integer.valueOf(req.getParameter("quantity"));
 
-		orderObject.create(   BeverageName, ManufacturerName,  quantity);
+		orderObject.create(BeverageName, ManufacturerName,  quantity);
 		res.sendRedirect("/frontend");
 	}
 	

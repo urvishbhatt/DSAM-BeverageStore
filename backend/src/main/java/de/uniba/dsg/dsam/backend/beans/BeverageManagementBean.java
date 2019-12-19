@@ -31,7 +31,6 @@ public class BeverageManagementBean implements BeverageManagement {
 	public void create(String manufacturer, String name, String promotion, int quantity, double price) {
 	
     	BeverageEntity b = new BeverageEntity( manufacturer,  name,  promotion, quantity, price);
-		System.out.println(b);
     	em.persist(b);
 	}
 
@@ -53,7 +52,6 @@ public class BeverageManagementBean implements BeverageManagement {
 	@Override
 	public Beverage getBeverages(int bevID) {
 		BeverageEntity bv = em.find(BeverageEntity.class, new Integer(bevID));
-		
 		return convert(bv);
 	}
 
@@ -65,30 +63,18 @@ public class BeverageManagementBean implements BeverageManagement {
 	//update the beverages
 	@Override
 	public void update(int id, String manufacturer, String name, String promotion, int quantity, double price) {
-	
 		BeverageEntity bev = em.find(BeverageEntity.class, new Integer(id));
-		//BeverageEntity bev = selection(id);
-		// COMMNET
-		
 		bev.setManufacturer(manufacturer);
 		bev.setName(name);
 		bev.setpromotion(promotion);
 		bev.setQuantity(quantity);
 		bev.setPrice(price);
 	}
-	//assign incentive id in beverages
+
 	@Override
-	public void update(String id, String promotion) {
-	
-		
-		
-		//BeverageEntity bev = em.find(BeverageEntity.class, new Integer(id));
-		//BeverageEntity bev = selection(id);
-		// COMMNET
-		
-		
-	//	bev.setpromotion(promotion);
-		
+	public void update(int id, String promotion) {
+		BeverageEntity bev = em.find(BeverageEntity.class, new Integer(id));
+		bev.setpromotion(promotion);
 	}
 	
 	private BeverageEntity selection(int bevId) {
@@ -101,5 +87,10 @@ public class BeverageManagementBean implements BeverageManagement {
 		
 		BeverageEntity mybev = em.find(BeverageEntity.class, new Integer(bevID));
 		em.remove(mybev);	
+	}
+
+	@Override
+	public void update(String id, String promotion) {
+
 	}
 }

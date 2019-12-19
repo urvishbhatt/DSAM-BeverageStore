@@ -18,22 +18,14 @@ public class OrderMessageDrivenBean implements OrderMessage {
 	
 	EntityManager em;
 	
-	  @Override
-	    public void create(CustomerOrder orderss) {
+	@Override
+	public void create(CustomerOrder orderss) { }
 
-	    }
-	  @Override
-	  public void create(String name, String manufacturer, int quantity) {
-
-		  logger.info("im inn order bean"+name+"name");
-	
-	CustomerOrderEntity b = new CustomerOrderEntity( name, manufacturer,   quantity);
-	
-	
-	
-	em.persist(b);
-	
-}
+	@Override
+	public void create(String name, String manufacturer, int quantity) {
+		CustomerOrderEntity b = new CustomerOrderEntity( name, manufacturer,   quantity);
+		em.persist(b);
+	}
 
 
 

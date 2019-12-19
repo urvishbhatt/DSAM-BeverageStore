@@ -19,7 +19,6 @@ public class BeverageEntity implements Serializable {
     private double price;
             	
 	public BeverageEntity(){
-		
 	}
 	
 	/**

@@ -14,10 +14,9 @@ public interface BeverageManagement {
    	List<Beverage> getBeverages();
 	public Beverage getBeverages(int bevID);
 	public void update(int id, String manufacturer, String name, String promotion, int quantity, double price);
-	public void delete(int bevID) ;
-	
-	//
-	//assign incentive id in beverages
-		
-		public void update(String id, String promotion);
+   	public void update(int id, String promotion);
+
+    public void delete(int bevID) ;
+
+    public void update(String id, String promotion);
 }

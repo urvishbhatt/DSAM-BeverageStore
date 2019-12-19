@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 public class CustomerOrder {
-
     private Date issueDate;
     private List<Beverage> orderItems;
 }
