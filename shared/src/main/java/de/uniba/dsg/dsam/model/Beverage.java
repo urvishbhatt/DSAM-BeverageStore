@@ -11,9 +11,7 @@ public final class Beverage implements Serializable {
     private int quantity;
     private double price;
 	
-	public Beverage(){
-		
-	}
+	public Beverage(){}
 	
 	/**
 	 * @param id

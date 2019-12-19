@@ -4,35 +4,43 @@ import javax.persistence.Entity;
 
 @Entity
 public class PromotionalGiftEntity extends IncentiveEntity {
+
+	private int id;
+	private String name;
+	private String type;
 	
-	private String Name;
-	
-	public PromotionalGiftEntity(){
-		
+	public PromotionalGiftEntity(){ }
+
+	public PromotionalGiftEntity(String name, String type) {
+		this.name = name;
+		this.type = type;
 	}
-	
-	/**
-	 * @param Name
-	 */
-	public PromotionalGiftEntity(String incentiveType, String name) {
-		this();
-		
-		
-		this.setIncentive("Promotional");
-		this.Name = name;
-	}
-	
-	
-	/**
-	 * @return the Name
-	 */
+
+	@Override
 	public String getName() {
-		return Name;
+		return name;
 	}
-	/**
-	 * @param Name the Name to set
-	 */
-	public void setName(String promotionName) {
-		this.Name = promotionName;
+
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

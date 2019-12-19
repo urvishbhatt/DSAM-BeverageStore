@@ -9,11 +9,11 @@
     </named-query>
 
     <named-query name="queryPromotiionalIncentives">
-        <query>Select new de.uniba.dsg.dsam.model.PromotionalGift(i.id, i.incentiveType, i.Name) From PromotionalGiftEntity i</query>
+        <query>Select new de.uniba.dsg.dsam.model.PromotionalGift(i.id, i.name,i.type) From PromotionalGiftEntity i</query>
     </named-query>
 
     <named-query name="queryTrialIncentives">
-        <query>Select new de.uniba.dsg.dsam.model.TrialPackage(i.id, i.incentiveType, i.Name) From TrialPackageEntity i</query>
+        <query>Select new de.uniba.dsg.dsam.model.TrialPackage(i.id, i.name,i.type) From TrialPackageEntity i</query>
     </named-query>
 
 </entity-mappings>

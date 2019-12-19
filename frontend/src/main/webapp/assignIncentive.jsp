@@ -46,15 +46,10 @@
 		
 		
 			<h4   hidden name="incentive_id"><%= inc.getId()%></h4>
-		<div class="row ">
-		
-				
-			
+			<div class="row ">
 			<div class="col-md-2"><h4  name="IncentiveName"><%= inc.getName()%></h4></div>
-			
-			
-			 <div class="col-md-2 radio">
-  <label><input type="radio" name="incentive_type" value = "<%= inc.getIncentiveType()%>" ><%= inc.getIncentiveType()%></label>
+				<div class="col-md-2 radio">
+  			<label><input type="radio" name="incentive_type" value = "<%= inc.getIncentiveType()%>" ><%= inc.getIncentiveType()%></label>
 </div>
 			
 			</div>

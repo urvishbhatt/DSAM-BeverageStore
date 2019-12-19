@@ -2,71 +2,23 @@ package de.uniba.dsg.dsam.model;
 
 import java.io.Serializable;
 
-public abstract class Incentive implements Serializable {
-	
-	public int id;
-	public String incentiveType;
-	public String Name;
-	public Incentive(){
-		
-	}
-	
-	/**
-	 * @param id
-	 * @param incentiveType
-	 * @param Name
-	 */
-	
-	public Incentive(int id, String incentiveType) {
-		super();
-		this.id = id;
-		this.incentiveType = incentiveType;
-	}
-	
-	
-	
-	
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
+public class Incentive implements Serializable {
+
+	public String type;
+	public String name;
+
+	public Incentive(){ }
+
+	public Incentive(String name, String type) {
+		this.name = name;
+		this.type = type;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+	public String getType() { return type; }
 
-	/**
-	 * @return the incentiveType
-	 */
-	public String getIncentiveType() {
-		return incentiveType;
-	}
-	
-	
-	/**
-	 * @param incentiveType the incentiveType to set
-	 */
-	public void setIncentiveType(String incentiveType) {
-	
-		this.incentiveType = incentiveType;
-	}
-	
-	/**
-	 * @return the Name
-	 */
-	public String getName() {
-		return Name;
-	}
-	/**
-	 * @param Name the Name to set
-	 */
-	public void setName(String Name) {
-		this.Name = Name;
-	}
-	
+	public void setType(String type) { this.type = type; }
+
+	public String getName() { return name; }
+
+	public void setName(String name) { this.name = name; }
 }

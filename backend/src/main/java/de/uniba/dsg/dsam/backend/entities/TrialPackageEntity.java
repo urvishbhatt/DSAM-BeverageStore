@@ -4,25 +4,41 @@ import javax.persistence.Entity;
 
 @Entity
 public class TrialPackageEntity extends IncentiveEntity {
+
+	private int id;
+	private String name;
+	private String type;
 	
-	private String Name;
-	
-	public TrialPackageEntity(){
-		
+	public TrialPackageEntity(){ }
+
+	public TrialPackageEntity(String name, String type) {
+		this.name = name;
+		this.type = type;
 	}
 
-	public TrialPackageEntity(String incentiveType, String name) {
-		this();
-		//this.setId(id);
-		this.setIncentive("Trial");
-		this.Name = name;
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
-	public void setName(String Name) {
-		this.Name = Name;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

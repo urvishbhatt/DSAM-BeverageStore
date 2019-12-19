@@ -1,5 +1,6 @@
 package de.uniba.dsg.dsam.client;
 
+import de.uniba.dsg.dsam.model.Incentive;
 import de.uniba.dsg.dsam.persistence.IncentiveManagement;
 
 import javax.ejb.EJB;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Logger;
 
 @WebServlet("/IncentiveServlet")
@@ -27,18 +29,25 @@ public class IncentiveServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
 		//int incentiveId = Integer.valueOf(req.getParameter("IncentiveId"));
-		String incentiveName = req.getParameter("IncentiveName");
-		String incentiveType = req.getParameter("incentive_type");
+		String incentiveName = req.getParameter("IncentiveName").trim();
+		String incentiveType = req.getParameter("incentive_type").trim();
 
-		if ("Trial".equals(incentiveType)) {
+//		if ("Trial".equals(incentiveType)) {
+//			incentiveManagementObject.create("Trial", incentiveName);
+//		} else if ("Promotional".equals(incentiveType)) {
+//			incentiveManagementObject.create("Promotional", incentiveName);
+//		}
 
-			incentiveManagementObject.create( "Trial", incentiveName);
-		} else if ("Promotional".equals(incentiveType)) {
+		PrintWriter out = res.getWriter();
 
-			incentiveManagementObject.create( "Promotional", incentiveName);
-		} 
-	
-		res.sendRedirect("/frontend");
+		Incentive incentive = new Incentive(incentiveName,incentiveType);
+		if (incentiveType.equals("Trial")){
+			incentiveManagementObject.create(incentive,true);
+			res.sendRedirect("/frontend");
+		}else {
+			incentiveManagementObject.create(incentive,false);
+			res.sendRedirect("/frontend");
+		}
 	}
 	
 	@Override
