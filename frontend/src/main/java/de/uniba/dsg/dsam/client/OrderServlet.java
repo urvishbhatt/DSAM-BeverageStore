@@ -2,7 +2,7 @@ package de.uniba.dsg.dsam.client;
 
 import de.uniba.dsg.dsam.model.CustomerOrder;
 import de.uniba.dsg.dsam.persistence.BeverageManagement;
-import de.uniba.dsg.dsam.persistence.OrderMessage;
+import de.uniba.dsg.dsam.persistence.OrderManagement;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 
 @WebServlet("/placeOrder")
@@ -21,7 +20,10 @@ public class OrderServlet extends HttpServlet {
     BeverageManagement beverageManagementObject;
 
 	@EJB
-    OrderMessage orderObject;
+    OrderManagement orderManagement;
+
+	@EJB
+	OrderSender orderSender;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
@@ -40,7 +42,8 @@ public class OrderServlet extends HttpServlet {
 		int quantity = Integer.valueOf(req.getParameter("quantity"));
 
 		CustomerOrder customerOrder = new CustomerOrder(BeverageName,ManufacturerName,quantity,date);
-		orderObject.create(customerOrder);
+		orderManagement.create(customerOrder);
+//		orderSender.sendMessage(customerOrder);
 
 		res.sendRedirect("/frontend");
 	}

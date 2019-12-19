@@ -21,8 +21,8 @@ public class IncentiveServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-//		req.setAttribute("incentiveList", incentiveManagementObject.getAllIncentive());
-//		req.getRequestDispatcher("/manageIncentive.jsp").forward(req, res);
+		req.setAttribute("incentiveList", incentiveManagementObject.getAllIncentive());
+		req.getRequestDispatcher("/manageIncentive.jsp").forward(req, res);
 
 	}
 	

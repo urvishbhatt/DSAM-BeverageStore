@@ -1,9 +1,10 @@
 package de.uniba.dsg.dsam.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class CustomerOrder {
+public class CustomerOrder implements Serializable {
 
     private int id;
     private String name;

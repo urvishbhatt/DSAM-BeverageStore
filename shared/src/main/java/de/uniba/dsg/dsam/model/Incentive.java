@@ -4,12 +4,18 @@ import java.io.Serializable;
 
 public class Incentive implements Serializable {
 
+	public int id;
 	public String type;
 	public String name;
 
 	public Incentive(){ }
 
 	public Incentive(String name, String type) {
+		this.name = name;
+		this.type = type;
+	}
+
+	public Incentive(int id,String name, String type) {
 		this.name = name;
 		this.type = type;
 	}

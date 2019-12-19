@@ -1,7 +1,6 @@
 package de.uniba.dsg.dsam.client;
 
-import de.uniba.dsg.dsam.persistence.BeverageManagement;
-import de.uniba.dsg.dsam.persistence.OrderMessage;
+import de.uniba.dsg.dsam.persistence.OrderManagement;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -18,11 +17,11 @@ public class OrderListServlet extends HttpServlet {
 	private static final Logger logger = Logger.getLogger(OrderServlet.class.getName());
 
 	@EJB
-    OrderMessage orderMessageObject;
+	OrderManagement orderManagementObject;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		req.setAttribute("orderList", orderMessageObject.getOrderList());
+		req.setAttribute("orderList", orderManagementObject.getOrderList());
 		req.getRequestDispatcher("/viewOrder.jsp").forward(req, res);
 	}
 	

@@ -1,10 +1,8 @@
 package de.uniba.dsg.dsam.client;
 
 import de.uniba.dsg.dsam.persistence.BeverageManagement;
-import de.uniba.dsg.dsam.persistence.OrderMessage;
 
 import javax.ejb.EJB;
-import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +19,7 @@ public class BIServlet extends HttpServlet {
     BeverageManagement beverageManagement;
 
     @EJB
-    OrderMessage OrderManagement;
+    de.uniba.dsg.dsam.persistence.OrderManagement OrderManagement;
 
     ArrayList<String> arrayList;
 

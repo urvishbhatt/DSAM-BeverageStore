@@ -53,15 +53,13 @@
 			<div class="col-md-2"><h4><%= inc.getName()%></h4></div>
 			
 			
-			<div class="col-md-2"><h4><%= inc.getIncentiveType()%></h4></div>
+			<div class="col-md-2"><h4><%= inc.getType()%></h4></div>
 	
 			
 			
 			
 			<div class="btn-group" role="group">
-					<a href="/frontend/EditIncentive?inc_id=<%= inc.getId() %>" class="btn btn-primary">Edit</a>
-					
-						
+					<a href="/frontend/EditIncentive?inc_id=<%= inc.getName() %>" class="btn btn-primary">Edit</a>
 					</div>
 			</div>
 		
