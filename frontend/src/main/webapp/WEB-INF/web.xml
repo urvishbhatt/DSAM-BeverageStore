@@ -73,4 +73,13 @@
 		<url-pattern>/viewOrder</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>BIFunctionality</servlet-name>
+		<servlet-class>de.uniba.dsg.dsam.client.BIServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BIFunctionality</servlet-name>
+		<url-pattern>/frontend/BIFunctionality</url-pattern>
+	</servlet-mapping>
+
 </web-app>

@@ -38,16 +38,17 @@
 						<tbody>
 						<tr>
 							<td>
-								<p><a href="/frontend/placeOrder" class="btn btn-primary">Order Creation</a></p>
-							</td>
-							<td>
 								<p><a href="/frontend/createBeverage" class="btn btn-primary">Beverages Creation</a></p>
 								<p><a href="/frontend/createIncentive" class="btn btn-primary">Incentives Creation</a></p>
 								<p><a href="/frontend/BeverageServlet" class="btn btn-primary">View Beverages</a></p>
-<%--								<p><a href="/frontend/viewOrder" class="btn btn-primary">View Orders</a></p>--%>
 								<p><a href="/frontend/orderList" class="btn btn-primary">View Orders</a></p>
 								<p><a href="/frontend/IncentiveServlet" class="btn btn-primary">Manage Incentives</a></p>
+								<p><a href="/frontend/BIFunctionality" class="btn btn-primary">BI Functionality</a></p>
 							</td>
+							<td>
+								<p><a href="/frontend/placeOrder" class="btn btn-primary">Order Creation</a></p>
+							</td>
+
 						</tr>
 						</tbody>
 					</table>

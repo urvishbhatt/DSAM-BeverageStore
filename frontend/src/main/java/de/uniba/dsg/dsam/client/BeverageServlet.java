@@ -18,7 +18,6 @@ public class BeverageServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-
 		req.setAttribute("beverageDetail", beverageManagementObject.getBeverages());
 		req.getRequestDispatcher("/manageBeverage.jsp").forward(req, res);
 	}
