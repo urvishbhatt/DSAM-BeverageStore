@@ -41,20 +41,25 @@ public class IncentiveManagementBean implements IncentiveManagement {
 		}
 	}
 
+	@Override
+	public Incentive getIncentives(int incentiveID) {
+		IncentiveEntity bev = em.find(IncentiveEntity.class, new Integer(incentiveID));
+		Incentive incentive = new Incentive(bev.getId(),bev.getName(), bev.getType());
+		return incentive ;
+	}
+
+	@Override
+	public void update(int incentiveID, String incentiveType) {
+		IncentiveEntity bev = em.find(IncentiveEntity.class, new Integer(incentiveID));
+		bev.setName(incentiveType);
+	}
+
 	//Unused
 	@Override
 	public void create(Incentive incentive) { }
 
 	@Override
 	public void create(String incentiveType, String name) { }
-
-	@Override
-	public Incentive getIncentives(int incentiveID) {
-		return null;
-	}
-
-	@Override
-	public void update(int incentiveID, String incentiveType) { }
 
 	@Override
 	public void delete(int incentiveID) { }

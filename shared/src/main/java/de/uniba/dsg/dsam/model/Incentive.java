@@ -16,6 +16,7 @@ public class Incentive implements Serializable {
 	}
 
 	public Incentive(int id,String name, String type) {
+		this.id = id;
 		this.name = name;
 		this.type = type;
 	}
@@ -27,4 +28,8 @@ public class Incentive implements Serializable {
 	public String getName() { return name; }
 
 	public void setName(String name) { this.name = name; }
+
+	public int getId() { return id; }
+
+	public void setId(int id) { this.id = id; }
 }

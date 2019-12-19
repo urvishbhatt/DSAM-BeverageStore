@@ -23,8 +23,6 @@ public class EditIncentiveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		int id = Integer.valueOf(req.getParameter("inc_id"));
 		Incentive incentiveObject = incentiveManagementObject.getIncentives(id);
-		
-		// add data for JSP
 		req.setAttribute("incentiveDetail", incentiveObject);
 		req.getRequestDispatcher("/editIncentive.jsp").forward(req, res);
 	}
@@ -35,7 +33,7 @@ public class EditIncentiveServlet extends HttpServlet {
 		String BeverageName = req.getParameter("beverage_name").trim();
 		int id = Integer.valueOf(req.getParameter("id"));
 
-		incentiveManagementObject.update( id,  BeverageName);
+		incentiveManagementObject.update( id, BeverageName);
 		// redirect
 		res.sendRedirect("/frontend/IncentiveServlet");
 	

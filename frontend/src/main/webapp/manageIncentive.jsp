@@ -29,12 +29,7 @@
 		<div class="col-md-2"><h4>Incentive Type</h4></div>
 		
 </div>
-<div class="row row-content">
 
-
-
-
-</div>
 	
 
 
@@ -48,27 +43,18 @@
 		
 		%>
 		<div class="row ">
-			
-			
+
 			<div class="col-md-2"><h4><%= inc.getName()%></h4></div>
-			
-			
 			<div class="col-md-2"><h4><%= inc.getType()%></h4></div>
-	
-			
-			
-			
+
 			<div class="btn-group" role="group">
-					<a href="/frontend/EditIncentive?inc_id=<%= inc.getName() %>" class="btn btn-primary">Edit</a>
-					</div>
+					<a href="/frontend/EditIncentive?inc_id=<%= inc.getId() %>" class="btn btn-primary">Edit</a>
 			</div>
+		</div>
 		
 		<% }%>
 
-
-
-
-	<a href="/frontend" class="btn btn-success">back</a>
+		<a href="/frontend" class="btn btn-success">back</a>
 </div>
 </body>
 </html>

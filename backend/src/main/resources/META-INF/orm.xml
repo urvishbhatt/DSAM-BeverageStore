@@ -9,7 +9,7 @@
     </named-query>
 
     <named-query name="queryIncentive">
-        <query>Select new de.uniba.dsg.dsam.model.Incentive(i.name ,i.type) From IncentiveEntity i</query>
+        <query>Select new de.uniba.dsg.dsam.model.Incentive(i.id,i.name ,i.type) From IncentiveEntity i</query>
     </named-query>
 
     <named-query name="queryOrders">

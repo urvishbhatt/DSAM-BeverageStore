@@ -23,7 +23,6 @@ public class IncentiveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		req.setAttribute("incentiveList", incentiveManagementObject.getAllIncentive());
 		req.getRequestDispatcher("/manageIncentive.jsp").forward(req, res);
-
 	}
 	
 	@Override
@@ -31,7 +30,6 @@ public class IncentiveServlet extends HttpServlet {
 
 		String incentiveName = req.getParameter("IncentiveName").trim();
 		String incentiveType = req.getParameter("incentive_type").trim();
-
 
 		Incentive incentive = new Incentive(incentiveName,incentiveType);
 		if (incentiveType.equals("Trial")){
@@ -44,7 +42,5 @@ public class IncentiveServlet extends HttpServlet {
 	}
 	
 	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
-
-	}
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException { }
 }
