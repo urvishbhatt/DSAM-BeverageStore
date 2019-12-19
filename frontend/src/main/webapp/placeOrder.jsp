@@ -28,15 +28,32 @@
 			<form role="form" action="placeOrder" method="post">
 
 				<div class="form-group">
-					<label>Beverage Name</label>
-					<input type="text" class="form-control .col-sm-*" name="beverage_name">
+					<label for="exampleFormControlSelect1">Beverage Name</label>
+					<select class="form-control" id="exampleFormControlSelect1" name="beverage_name">
+
+						<%
+							List<Beverage> beverages = (List<Beverage>) request.getAttribute("beverageList");
+
+							for(Beverage bev: beverages) {
+						%>
+						<option><%= bev.getName() %></option>
+						<% } %>
+					</select>
 				</div>
+
 				<div class="form-group">
-					<label>Manufacturer Name</label>
-					<input type="text" class="form-control inputsm" name="beverage_manufacturer">
+					<label for="exampleFormControlSelect2">Manufacturer Name</label>
+					<select class="form-control" id="exampleFormControlSelect2" name="beverage_manufacturer">
+
+						<%
+							List<Beverage> beverages2 = (List<Beverage>) request.getAttribute("beverageList");
+
+							for(Beverage bev: beverages2) {
+						%>
+						<option><%= bev.getManufacturer() %></option>
+						<% } %>
+					</select>
 				</div>
-
-
 
 				<div class="form-group">
 					<label>Required Quantity</label>
@@ -48,36 +65,7 @@
 		</div>
 
 	</div>
-
-	<!-- displaying all beverages to the customer -->
-	<div class="row row-content">
-		<h2>All available Beverages at our store</h2>
-		<div class="col-md-3"><h4>Manufacturer Name</h4></div>
-		<div class="col-md-2"><h4>Name</h4></div>
-
-		<div class="col-md-2"><h4>Quantity</h4></div>
-		<div class="col-md-2"><h4>Price</h4></div>
-	</div>
-
-	<%
-		List<Beverage> beverages = (List<Beverage>) request.getAttribute("beverageList");
-
-		for(Beverage bev: beverages) {
-	%>
-	<div class="row">
-
-		<div class="col-md-3"><h4><%= bev.getManufacturer() %></h4></div>
-		<div class="col-md-2"><h4><%= bev.getName() %></h4></div>
-
-		<div class="col-md-2"><h4><%= bev.getQuantity() %></h4></div>
-		<div class="col-md-2"><h4><%= bev.getPrice() %></h4></div>
-
-	</div>
-	<% } %>
 </div>
-
-
-
 
 </body>
 </html>
