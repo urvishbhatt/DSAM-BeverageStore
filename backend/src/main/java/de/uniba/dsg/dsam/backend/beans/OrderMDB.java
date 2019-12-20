@@ -9,39 +9,22 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
-
-import de.uniba.dsg.dsam.backend.entities.CustomerOrderEntity;
-import de.uniba.dsg.dsam.model.Beverage;
 import de.uniba.dsg.dsam.model.CustomerOrder;
-import de.uniba.dsg.dsam.persistence.BeverageManagement;
 import de.uniba.dsg.dsam.persistence.OrderManagement;
 
-/**
- * Message-Driven Bean implementation class for: NewRoomMDB
- *
- */
-// COMMENT
-// The queue name could be configured within this annotation using the "mappedName" attribute, i.e., mappedName = "testQueue".
-// From a configuration point of view the use of the according deployment descriptor is more sensible.
-@MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
+@MessageDriven(
+        activationConfig = {
+                @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
+                @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge")
+        },
+        mappedName = "BeverageStoreQueue")
 public class OrderMDB implements MessageListener {
     private static final Logger logger = Logger.getLogger(OrderMDB.class.getName());
-    // COMMENT
-    // Use container's dependency injection for the functionality you need.
     @EJB
     OrderManagement orderManagementObject;
 
-    /**
-     * Default constructor.
-     */
-    public OrderMDB() {
+    public OrderMDB() { }
 
-    }
-
-    /**
-     * @see MessageListener#onMessage(Message)
-     */
     public void onMessage(Message message) {
 
         if (message == null) {

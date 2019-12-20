@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 @Stateless
 public class OrderSender {
-    private static final Logger logger = Logger.getLogger(QueueSender.class.getName());
+    private static final Logger logger = Logger.getLogger(OrderSender.class.getName());
 
     @Resource(mappedName = "BeverageStoreCF")
     private ConnectionFactory factory;
