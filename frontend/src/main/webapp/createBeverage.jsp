@@ -46,7 +46,6 @@
           <input type="number" class="form-control inputsm" name="beverage_price" required>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
-        <a href="/frontend" class="btn bootstrap-theme">Back</a>
       </form>
     </div>
   </div>

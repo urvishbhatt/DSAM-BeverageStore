@@ -29,7 +29,7 @@
 
 				<div class="form-group">
 					<label for="exampleFormControlSelect1">Beverage Name</label>
-					<select class="form-control" id="exampleFormControlSelect1" name="beverage_name">
+					<select class="form-control" id="exampleFormControlSelect1" name="beverage_name" required>
 
 						<%
 							List<Beverage> beverages = (List<Beverage>) request.getAttribute("beverageList");
@@ -43,7 +43,7 @@
 
 				<div class="form-group">
 					<label for="exampleFormControlSelect2">Manufacturer Name</label>
-					<select class="form-control" id="exampleFormControlSelect2" name="beverage_manufacturer">
+					<select class="form-control" id="exampleFormControlSelect2" name="beverage_manufacturer" required>
 
 						<%
 							List<Beverage> beverages2 = (List<Beverage>) request.getAttribute("beverageList");
@@ -57,10 +57,10 @@
 
 				<div class="form-group">
 					<label>Required Quantity</label>
-					<input type="text" class="form-control inputsm" name="quantity">
+					<input type="number" class="form-control inputsm" name="quantity" required>
 				</div>
 
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-success">Submit</button>
 			</form>
 		</div>
 

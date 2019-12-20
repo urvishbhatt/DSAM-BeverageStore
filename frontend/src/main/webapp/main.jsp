@@ -31,8 +31,8 @@
 					<table class="table">
 						<thead>
 						<tr>
-							<th class="h-100" siz="400">Customer Portal<br></th>
 							<th class="h-100" siz="400">Salesman Portal</th>
+							<th class="h-100" siz="400">Customer Portal<br></th>
 						</tr>
 						</thead>
 						<tbody>

@@ -18,6 +18,7 @@ import de.uniba.dsg.dsam.persistence.OrderManagement;
                 @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge")
         },
         mappedName = "BeverageStoreQueue")
+
 public class OrderMDB implements MessageListener {
     private static final Logger logger = Logger.getLogger(OrderMDB.class.getName());
     @EJB

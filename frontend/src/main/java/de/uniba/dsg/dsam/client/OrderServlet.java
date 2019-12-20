@@ -42,8 +42,8 @@ public class OrderServlet extends HttpServlet {
 		int quantity = Integer.valueOf(req.getParameter("quantity"));
 
 		CustomerOrder customerOrder = new CustomerOrder(BeverageName,ManufacturerName,quantity,date);
-//		orderManagement.create(customerOrder);
-		orderSender.sendMessage(customerOrder);
+		orderManagement.create(customerOrder);
+//		orderSender.sendMessage(customerOrder);
 
 		res.sendRedirect("/frontend");
 	}

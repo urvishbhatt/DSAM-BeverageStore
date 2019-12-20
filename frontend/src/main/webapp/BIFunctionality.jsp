@@ -18,48 +18,49 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<table class="table">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">Incentive Name</th>
-        <th scope="col">Incentive Revenue</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Promotional Incentive</th>
-            <%
+<body style="background-color: #DCECEC" class="bg-light">
 
-                String total_revenue = (String)request.getAttribute("total_revenue");
-                String trial_revenue = (String) request.getAttribute("trial_revenue");
-                String promotional_revenue = (String)request.getAttribute("promotional_revenue");
-                String non_revenu = (String) request.getAttribute("non_revenu");
+    <div class="container">
+        <h1 class="">Revenue Details</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Incentive Name</th>
+                <th scope="col">Incentive Revenue</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <%
 
-            %>
-            <td><%=promotional_revenue%></td>
-        </tr>
+                    String total_revenue = (String)request.getAttribute("total_revenue");
+                    String trial_revenue = (String) request.getAttribute("trial_revenue");
+                    String promotional_revenue = (String)request.getAttribute("promotional_revenue");
+                    String non_revenu = (String) request.getAttribute("non_revenu");
 
-        <tr>
-            <th>Trial Incentive</th>
-            <td><%=trial_revenue%></td>
-        </tr>
+                %>
+                <th>Promotional Incentive</th>
+                <td><%=promotional_revenue%> $</td>
+            </tr>
 
-        <tr>
-            <th>Non Incentive</th>
-            <td><%=non_revenu%></td>
-        </tr>
+            <tr>
+                <th>Trial Incentive</th>
+                <td><%=trial_revenue%> $</td>
+            </tr>
 
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">Total Revenue</th>
-        <th scope="col"><%=total_revenue%></th>
-    </tr>
-    </thead>
+            <tr>
+                <th>Non Incentive</th>
+                <td><%=non_revenu%> $</td>
+            </tr>
 
-    </tbody>
-</table>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Total Revenue</th>
+                <th scope="col"><%=total_revenue%> $</th>
+            </tr>
+            </thead>
 
-
+            </tbody>
+        </table>
+    </div>
 </body>
-</html>

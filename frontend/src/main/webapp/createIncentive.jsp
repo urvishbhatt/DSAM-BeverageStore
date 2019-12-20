@@ -23,7 +23,7 @@
       <form role="form" action="IncentiveServlet" method="post">
         <div class="form-group">
           <label >Name</label>
-          <input type="text" class="form-control .col-sm-*" name="IncentiveName">
+          <input type="text" class="form-control .col-sm-*" name="IncentiveName" required>
         </div>
         <div class="form-group">
           <label>Type</label>
@@ -34,7 +34,7 @@
             <label><input type="radio" name="incentive_type" value="Promotional">Promotional</label>
           </div>
         </div>
-        <button type="submit" class="btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
   </div>

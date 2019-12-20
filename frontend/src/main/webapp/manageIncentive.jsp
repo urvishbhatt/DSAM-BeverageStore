@@ -25,13 +25,10 @@
 <div class="container">
 <div class="row row-content">
 	
-		<div class="col-md-2"><h4>Incentive Name</h4></div>
-		<div class="col-md-2"><h4>Incentive Type</h4></div>
+	<div class="col-md-2"><h4><b>Incentive Name</b></h4></div>
+	<div class="col-md-2"><h4><b>Incentive Type</b></h4></div>
 		
 </div>
-
-	
-
 
 <%  
 	
@@ -54,7 +51,7 @@
 		
 		<% }%>
 
-		<a href="/frontend" class="btn btn-success">back</a>
+
 </div>
 </body>
 </html>
