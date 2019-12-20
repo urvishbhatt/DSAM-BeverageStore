@@ -43,8 +43,6 @@ public class OrderServlet extends HttpServlet {
 
 		CustomerOrder customerOrder = new CustomerOrder(BeverageName,ManufacturerName,quantity,date);
 		orderManagement.create(customerOrder);
-//		orderSender.sendMessage(customerOrder);
-
 		res.sendRedirect("/frontend");
 	}
 	

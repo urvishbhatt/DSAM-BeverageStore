@@ -20,7 +20,7 @@
 <title>Incentive Management</title>
 </head>
 
-<body>
+<body class="bg-light" style="background-color:#DCECEC">
 
 <div class="container">
 <div class="row row-content">
@@ -46,12 +46,27 @@
 
 			<div class="btn-group" role="group">
 					<a href="/frontend/EditIncentive?inc_id=<%= inc.getId() %>" class="btn btn-primary">Edit</a>
+					<a id="<%= inc.getId() %>" href="/frontend/EditIncentive?inc_id=<%= inc.getId() %>" class="delete btn btn-danger">Delete</a>
 			</div>
+
 		</div>
 		
 		<% }%>
 
-
 </div>
+<script>
+	$(document).ready(function() {
+		$(".delete").click(function() {
+			event.preventDefault();
+			$.ajax({
+				url: '/frontend/EditIncentive?inc_id=' + event.target.id,
+				type: 'DELETE',
+				success: function(response) {
+					location.reload();
+				}
+			});
+		});
+	});
+</script>
 </body>
 </html>

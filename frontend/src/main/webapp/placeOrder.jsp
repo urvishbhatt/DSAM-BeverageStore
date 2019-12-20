@@ -19,7 +19,7 @@
 	<title>Place Order</title>
 
 </head>
-<body>
+<body class="bg-light" style="background-color:#DCECEC">
 <div class="container">
 	<div class="row row-content">
 		<h2>Place your order</h2>

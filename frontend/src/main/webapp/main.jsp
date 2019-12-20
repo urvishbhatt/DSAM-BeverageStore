@@ -47,6 +47,7 @@
 							</td>
 							<td>
 								<p><a href="/frontend/placeOrder" class="btn btn-primary">Order Creation</a></p>
+								<p><a href="/frontend/placeOrder2" class="btn btn-primary">Order Creation With JMS</a></p>
 							</td>
 
 						</tr>

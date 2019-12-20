@@ -12,35 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-//import de.uniba.dsg.dsam.backend.entities.BeverageEntity;
-
 @Stateless
 public class BeverageManagementBean implements BeverageManagement {
-	
-	private static final Logger logger = Logger.getLogger(BeverageManagementBean.class.getName());
 
 	@PersistenceContext(type=PersistenceContextType.TRANSACTION)
-	EntityManager em;
-
-    @Override
-    public void create(Beverage beverage) {
-
-    }
+	EntityManager entityManager;
     
     @Override
 	public void create(String manufacturer, String name, String promotion, int quantity, double price) {
-	
     	BeverageEntity b = new BeverageEntity( manufacturer,  name,  promotion, quantity, price);
-    	em.persist(b);
+		entityManager.persist(b);
 	}
 
     @Override
 	public List<Beverage> getBeverages() {
-		@SuppressWarnings("unchecked")
-
-        List<Beverage> listBeverage = em.createNamedQuery("queryBeverages").getResultList();
-	
-		
+        List<Beverage> listBeverage = entityManager.createNamedQuery("queryBeverages").getResultList();
 		if(listBeverage == null) {
 			return new ArrayList<Beverage>();
 		}
@@ -51,7 +37,7 @@ public class BeverageManagementBean implements BeverageManagement {
 	
 	@Override
 	public Beverage getBeverages(int bevID) {
-		BeverageEntity bv = em.find(BeverageEntity.class, new Integer(bevID));
+		BeverageEntity bv = entityManager.find(BeverageEntity.class, new Integer(bevID));
 		return convert(bv);
 	}
 
@@ -59,11 +45,10 @@ public class BeverageManagementBean implements BeverageManagement {
 		Beverage ret = new Beverage(bev.getId(), bev.getManufacturer(), bev.getName(), bev.getpromotion(),bev.getQuantity(), bev.getPrice() );
 		return ret;
 	}
-	
-	//update the beverages
+
 	@Override
 	public void update(int id, String manufacturer, String name, String promotion, int quantity, double price) {
-		BeverageEntity bev = em.find(BeverageEntity.class, new Integer(id));
+		BeverageEntity bev = entityManager.find(BeverageEntity.class, new Integer(id));
 		bev.setManufacturer(manufacturer);
 		bev.setName(name);
 		bev.setpromotion(promotion);
@@ -73,24 +58,13 @@ public class BeverageManagementBean implements BeverageManagement {
 
 	@Override
 	public void update(int id, String promotion) {
-		BeverageEntity bev = em.find(BeverageEntity.class, new Integer(id));
+		BeverageEntity bev = entityManager.find(BeverageEntity.class, new Integer(id));
 		bev.setpromotion(promotion);
-	}
-	
-	private BeverageEntity selection(int bevId) {
-		//BeverageEntity bv = em.find(BeverageEntity.class, new Integer(bevId));
-		return null;
 	}
 	
 	@Override
 	public void delete(int bevID) {
-		
-		BeverageEntity mybev = em.find(BeverageEntity.class, new Integer(bevID));
-		em.remove(mybev);	
-	}
-
-	@Override
-	public void update(String id, String promotion) {
-
+		BeverageEntity mybev = entityManager.find(BeverageEntity.class, new Integer(bevID));
+		entityManager.remove(mybev);
 	}
 }

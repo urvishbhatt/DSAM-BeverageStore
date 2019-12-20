@@ -20,7 +20,7 @@
     <title>Assign Incentives</title>
 </head>
 
-<body>
+<body style="background-color: #DCECEC" class="bg-light">
 <div class="container">
     <div class="row row-content">
 

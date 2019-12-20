@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContextType;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Stateful
+@Stateless
 @Local(OrderManagement.class)
 public class OrderManagementDrivenBean implements OrderManagement {
 	private static final Logger logger = Logger.getLogger(OrderManagement.class.getName());
@@ -23,15 +23,11 @@ public class OrderManagementDrivenBean implements OrderManagement {
 	
 	@Override
 	public void create(CustomerOrder orders) {
-//		CustomerOrderEntity customerOrderEntity = new CustomerOrderEntity(orders.getName(),orders.getManufacturer(),orders.getQuantity(),orders.getIssueDate());
-//		logger.severe("My Test create method");
-//		em.persist(customerOrderEntity);
-
 		CustomerOrderEntity order = new CustomerOrderEntity(orders.getName(),orders.getManufacturer(),orders.getQuantity(),orders.getIssueDate());
 		logger.info("order details:-name"+order.getName()+"date"+order.getIssueDate()+"quantity"+order.getQuantity());
 		System.out.println("name="+order.getName());
-		em.persist(order);
 		em.flush();
+		em.persist(order);
 	}
 
 	@Override

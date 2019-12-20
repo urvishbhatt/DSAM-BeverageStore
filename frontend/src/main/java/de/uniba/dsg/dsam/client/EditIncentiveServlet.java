@@ -34,15 +34,15 @@ public class EditIncentiveServlet extends HttpServlet {
 		int id = Integer.valueOf(req.getParameter("id"));
 
 		incentiveManagementObject.update( id, BeverageName);
-		// redirect
 		res.sendRedirect("/frontend/IncentiveServlet");
 	
 	}	
 	
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		int id = Integer.valueOf(req.getParameter("beverage_id"));
-
+		int id = Integer.valueOf(req.getParameter("inc_id"));
+		logger.severe("My Super Test" + String.valueOf(id));
+		incentiveManagementObject.delete(id);
 	}
 	
 	

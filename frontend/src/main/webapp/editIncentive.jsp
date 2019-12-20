@@ -18,7 +18,7 @@
 
 <title>Edit Incentives</title>
 </head>
-<body>
+<body class="bg-light" style="background-color:#DCECEC">
 <div class="container">
 <div class="row row-content">
 <h2>Incentive Editor</h2>

@@ -32,15 +32,13 @@ public class IncentiveServlet extends HttpServlet {
 		String incentiveType = req.getParameter("incentive_type").trim();
 
 		Incentive incentive = new Incentive(incentiveName,incentiveType);
-		if (incentiveType.equals("Trial")){
-			incentiveManagementObject.create(incentive,true);
-			res.sendRedirect("/frontend");
-		}else {
-			incentiveManagementObject.create(incentive,false);
-			res.sendRedirect("/frontend");
-		}
+		incentiveManagementObject.create(incentive);
+		res.sendRedirect("/frontend");
 	}
 	
 	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException { }
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		int id = Integer.valueOf(req.getParameter("inc_id"));
+		incentiveManagementObject.delete(id);
+	}
 }
