@@ -4,6 +4,7 @@ import de.uniba.dsg.dsam.backend.entities.BeverageEntity;
 import de.uniba.dsg.dsam.model.Beverage;
 import de.uniba.dsg.dsam.persistence.BeverageManagement;
 
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Stateless
+@Stateful
 public class BeverageManagementBean implements BeverageManagement {
 
 	@PersistenceContext(type=PersistenceContextType.TRANSACTION)

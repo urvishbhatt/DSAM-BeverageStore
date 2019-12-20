@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
+import javax.ejb.Stateful;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
@@ -18,7 +19,7 @@ import de.uniba.dsg.dsam.persistence.OrderManagement;
                 @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge")
         },
         mappedName = "BeverageStoreQueue")
-
+//@Stateful
 public class OrderMDB implements MessageListener {
     private static final Logger logger = Logger.getLogger(OrderMDB.class.getName());
     @EJB

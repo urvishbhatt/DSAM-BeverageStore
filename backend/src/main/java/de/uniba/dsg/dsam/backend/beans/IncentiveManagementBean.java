@@ -7,6 +7,7 @@ import de.uniba.dsg.dsam.model.Incentive;
 import de.uniba.dsg.dsam.persistence.IncentiveManagement;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-@Stateless
+@Stateful
 public class IncentiveManagementBean implements IncentiveManagement {
 
 	@PersistenceContext(type=PersistenceContextType.TRANSACTION)

@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContextType;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Stateless
+@Stateful
 @Local(OrderManagement.class)
 public class OrderManagementDrivenBean implements OrderManagement {
 	private static final Logger logger = Logger.getLogger(OrderManagement.class.getName());
