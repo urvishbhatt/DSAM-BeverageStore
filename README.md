@@ -34,16 +34,4 @@ A Stateful application saves data about each client session and uses that data t
 Since it is a Beverage management Store ,and using stateful or stateless depends on the conversational state and 
 Since we do create order Each time , its Good to use Stateful , Since it serves the request  of the client with the same
 bean, unlike Stateless which uses new bean for every request.
-
-
-========================================================================
-Observation While adding Orders:
-
-When the data is added using the JMS(Message drivenBeans) , Sometimes the data is not added, thats the reason we 
-implemented the functionality with JMS queue and without it.
-
-========================
-Guidance needed  
-We where unable to find the root cause of the data not getting entered sometimes while using JMS , So  we would like 
-to know the reason of the same. 
- 
+===========================================================================================================
