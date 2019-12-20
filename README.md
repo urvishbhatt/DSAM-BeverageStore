@@ -16,7 +16,7 @@ Minimal setup:
 - the front end being the main.jsp
 - Beverage Creation  --- create new bevrages 
 - Incentive Creation --- Create new Incentive
-- Order Creation     --- Create new order
+- Order Creation     --- Create new order ( JMS (Message Driven Beans) is implemented for orders Page
 - View Beverage      --- Displays all the created bevrages 
 - View Order         --- Displays all the created Oders
 - BI Functionality     :-it genrates the total revenue, and revenues with respect to each Incentive
